@@ -10,8 +10,4 @@ class NTP {
   static Future<DateTime> now() async {
     return DateTime.now();
   }
-
-  static int _parseData(List<int> data, DateTime time) {
-    return 0;
-  }
 }

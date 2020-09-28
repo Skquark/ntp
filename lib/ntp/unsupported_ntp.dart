@@ -10,8 +10,4 @@ class NTP {
   static Future<DateTime> now() async {
     throw ('Platform not found');
   }
-
-  static int _parseData(List<int> data, DateTime time) {
-    throw ('Platform not found');
-  }
 }
