@@ -29,10 +29,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4b6e4be-7424-483e-809d-8f38cf359ac8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/src/unsupported_ntp.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/universal_ntp.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ntp.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/mobile_ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/mobile_ntp.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/web_ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/web_ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +106,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager" selected="Dart Command Line App.main.dart">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -168,8 +172,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Dart Command Line App.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter Test.tests in ntp_test.dart" />
         <item itemvalue="Flutter Test.Github" />
         <item itemvalue="Flutter Test.test NTP now" />
@@ -252,26 +256,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2518" height="368" key="GridCell.Tab.0.bottom" timestamp="1601261136683">
+    <state x="744" y="339" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601264013839">
+      <screen x="0" y="25" width="2560" height="1311" />
+    </state>
+    <state x="744" y="339" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601264013839" />
+    <state width="2518" height="368" key="GridCell.Tab.0.bottom" timestamp="1601265059396">
       <screen x="0" y="25" width="2560" height="1311" />
     </state>
     <state width="2518" height="369" key="GridCell.Tab.0.bottom/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198162" />
-    <state width="2518" height="368" key="GridCell.Tab.0.bottom/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601261136683" />
-    <state width="2518" height="368" key="GridCell.Tab.0.center" timestamp="1601261136682">
+    <state width="2518" height="368" key="GridCell.Tab.0.bottom/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601265059396" />
+    <state width="2518" height="368" key="GridCell.Tab.0.center" timestamp="1601265059395">
       <screen x="0" y="25" width="2560" height="1311" />
     </state>
     <state width="2518" height="369" key="GridCell.Tab.0.center/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198161" />
-    <state width="2518" height="368" key="GridCell.Tab.0.center/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601261136682" />
-    <state width="2518" height="368" key="GridCell.Tab.0.left" timestamp="1601261136681">
+    <state width="2518" height="368" key="GridCell.Tab.0.center/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601265059395" />
+    <state width="2518" height="368" key="GridCell.Tab.0.left" timestamp="1601265059395">
       <screen x="0" y="25" width="2560" height="1311" />
     </state>
     <state width="2518" height="369" key="GridCell.Tab.0.left/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198161" />
-    <state width="2518" height="368" key="GridCell.Tab.0.left/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601261136681" />
-    <state width="2518" height="368" key="GridCell.Tab.0.right" timestamp="1601261136682">
+    <state width="2518" height="368" key="GridCell.Tab.0.left/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601265059395" />
+    <state width="2518" height="368" key="GridCell.Tab.0.right" timestamp="1601265059396">
       <screen x="0" y="25" width="2560" height="1311" />
     </state>
     <state width="2518" height="369" key="GridCell.Tab.0.right/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198162" />
-    <state width="2518" height="368" key="GridCell.Tab.0.right/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601261136682" />
+    <state width="2518" height="368" key="GridCell.Tab.0.right/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1601265059396" />
     <state x="781" y="315" key="SettingsEditor" timestamp="1600986761528">
       <screen x="0" y="25" width="2560" height="1309" />
     </state>

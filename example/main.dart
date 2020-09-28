@@ -1,4 +1,4 @@
-import 'package:ntp/ntp.dart';
+import 'package:ntp/universal_ntp.dart';
 
 Future<void> main() async {
   DateTime _myTime;

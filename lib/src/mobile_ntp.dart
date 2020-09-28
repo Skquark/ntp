@@ -1,8 +1,7 @@
 import 'dart:math';
-import 'package:ntp/ntp.dart';
 import 'package:universal_io/io.dart';
 
-class MobileNTP implements NTP{
+class NTP {
   /// Return NTP delay in milliseconds
   static Future<int> getNtpOffset(
       {String lookUpAddress = 'pool.ntp.org',
@@ -423,5 +422,3 @@ class _NTPMessage {
     return '';
   }
 }
-
-NTP getNTP() => MobileNTP();
