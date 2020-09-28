@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     DateTime _myTime;
     DateTime _ntpTime;
 
+
     /// Or you could get NTP current (It will call DateTime.now() and add NTP offset to it)
     _myTime = await NTP.now();
 
