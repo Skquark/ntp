@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:release" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4b6e4be-7424-483e-809d-8f38cf359ac8" name="Default" comment="" />
+    <list default="true" id="c4b6e4be-7424-483e-809d-8f38cf359ac8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/ntp/unsupported_ntp.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ntp/web_ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ntp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ntp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ntp/ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ntp/mobile_ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ntp/ntp_message.dart" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +83,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -53,12 +90,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554815291514" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -69,18 +108,16 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.ntp">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,6 +127,15 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="main.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/example/main.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/example_flutter/lib/main.dart" />
+      <method v="2" />
     </configuration>
     <configuration name="ntp" type="FlutterRunConfigurationType" factoryName="Flutter" singleton="false">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
@@ -109,21 +155,27 @@
       <option name="testFile" value="$PROJECT_DIR$/test/ntp_test.dart" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Dart Command Line App.main.dart" />
       <item itemvalue="Flutter.ntp" />
-      <item itemvalue="Flutter Test.tests in ntp_test.dart" />
-      <item itemvalue="Flutter Test.test NTP now" />
+      <item itemvalue="Flutter.main.dart" />
       <item itemvalue="Flutter Test.Github" />
+      <item itemvalue="Flutter Test.test NTP now" />
+      <item itemvalue="Flutter Test.tests in ntp_test.dart" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Dart Command Line App.main.dart" />
         <item itemvalue="Flutter Test.tests in ntp_test.dart" />
         <item itemvalue="Flutter Test.Github" />
         <item itemvalue="Flutter Test.test NTP now" />
@@ -193,7 +245,42 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state width="2518" height="369" key="GridCell.Tab.0.bottom" timestamp="1600988051433">
+      <screen x="0" y="25" width="2560" height="1311" />
+    </state>
+    <state width="2518" height="369" key="GridCell.Tab.0.bottom/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198162" />
+    <state width="2518" height="369" key="GridCell.Tab.0.bottom/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1600988051433" />
+    <state width="2518" height="369" key="GridCell.Tab.0.center" timestamp="1600988051433">
+      <screen x="0" y="25" width="2560" height="1311" />
+    </state>
+    <state width="2518" height="369" key="GridCell.Tab.0.center/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198161" />
+    <state width="2518" height="369" key="GridCell.Tab.0.center/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1600988051433" />
+    <state width="2518" height="369" key="GridCell.Tab.0.left" timestamp="1600988051432">
+      <screen x="0" y="25" width="2560" height="1311" />
+    </state>
+    <state width="2518" height="369" key="GridCell.Tab.0.left/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198161" />
+    <state width="2518" height="369" key="GridCell.Tab.0.left/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1600988051432" />
+    <state width="2518" height="369" key="GridCell.Tab.0.right" timestamp="1600988051433">
+      <screen x="0" y="25" width="2560" height="1311" />
+    </state>
+    <state width="2518" height="369" key="GridCell.Tab.0.right/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600987198162" />
+    <state width="2518" height="369" key="GridCell.Tab.0.right/2560.25.1344.815/0.25.2560.1311@0.25.2560.1311" timestamp="1600988051433" />
+    <state x="781" y="315" key="SettingsEditor" timestamp="1600986761528">
+      <screen x="0" y="25" width="2560" height="1309" />
+    </state>
+    <state x="781" y="315" key="SettingsEditor/2560.25.1344.815/0.25.2560.1309@0.25.2560.1309" timestamp="1600986761528" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1593692376240">
       <screen x="2560" y="-711" width="1440" height="2560" />
     </state>

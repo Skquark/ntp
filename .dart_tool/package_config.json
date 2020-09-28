@@ -3,19 +3,19 @@
   "packages": [
     {
       "name": "meta",
-      "rootUri": "file:///Users/snoopy/.pub-cache/hosted/pub.dartlang.org/meta-1.1.8",
+      "rootUri": "file:///Users/radvansky/.pub-cache/hosted/pub.dartlang.org/meta-1.2.3",
       "packageUri": "lib/",
       "languageVersion": "1.12"
     },
     {
       "name": "universal_io",
-      "rootUri": "file:///Users/snoopy/.pub-cache/hosted/pub.dartlang.org/universal_io-1.0.1",
+      "rootUri": "file:///Users/radvansky/.pub-cache/hosted/pub.dartlang.org/universal_io-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
     {
       "name": "zone_local",
-      "rootUri": "file:///Users/snoopy/.pub-cache/hosted/pub.dartlang.org/zone_local-0.1.2",
+      "rootUri": "file:///Users/radvansky/.pub-cache/hosted/pub.dartlang.org/zone_local-0.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.6"
     },
@@ -26,7 +26,7 @@
       "languageVersion": "2.6"
     }
   ],
-  "generated": "2020-07-02T12:19:40.268178Z",
+  "generated": "2020-09-24T22:32:51.505940Z",
   "generator": "pub",
-  "generatorVersion": "2.8.4"
+  "generatorVersion": "2.10.0-156.0.dev"
 }
