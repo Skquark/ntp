@@ -1,4 +1,6 @@
-class NTP {
+import 'package:ntp/ntp.dart';
+
+class WebNTP implements NTP {
   static Future<int> getNtpOffset(
       {String lookUpAddress = 'pool.ntp.org',
       int port = 123,
@@ -11,3 +13,5 @@ class NTP {
     return DateTime.now();
   }
 }
+
+NTP getNTP() => WebNTP();

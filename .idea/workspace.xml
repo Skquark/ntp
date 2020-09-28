@@ -31,6 +31,8 @@
     <list default="true" id="c4b6e4be-7424-483e-809d-8f38cf359ac8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/mobile_ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/mobile_ntp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/web_ntp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/web_ntp.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
