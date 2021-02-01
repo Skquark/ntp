@@ -20,13 +20,13 @@
       "languageVersion": "2.6"
     },
     {
-      "name": "ntp",
+      "name": "universal_ntp",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.6"
     }
   ],
-  "generated": "2020-09-24T22:32:51.505940Z",
+  "generated": "2021-02-01T21:19:33.115111Z",
   "generator": "pub",
-  "generatorVersion": "2.10.0-156.0.dev"
+  "generatorVersion": "2.12.0-133.7.beta"
 }

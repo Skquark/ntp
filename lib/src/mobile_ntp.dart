@@ -1,33 +1,51 @@
+import 'dart:async';
+import 'dart:convert';
 import 'dart:math';
 import 'package:universal_io/io.dart';
 
+enum DnsApiProvider { google, cloudflare }
+
+///
+/// Base url for each dns resolver
+///
+const _dnsApiProviderUrl = {
+  DnsApiProvider.google: 'https://dns.google.com/resolve',
+  DnsApiProvider.cloudflare: 'https://cloudflare-dns.com/dns-query',
+};
+
+const _defaultLookup = 'time.google.com';
+
+RegExp _ipRegex = RegExp(
+    r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+
 class NTP {
   /// Return NTP delay in milliseconds
-  static Future<int> getNtpOffset(
-      {String lookUpAddress = 'pool.ntp.org',
-      int port = 123,
-      DateTime localTime,
-      Duration timeout}) async {
-    final List<InternetAddress> addressArray =
-        await InternetAddress.lookup(lookUpAddress);
+  static Future<int> getNtpOffset({
+    String lookUpAddress = _defaultLookup,
+    int port = 123,
+    DateTime localTime,
+    Duration timeout,
+    DnsApiProvider dnsProvider = DnsApiProvider.google,
+  }) async {
+    final ntpServerAddress = await _lookupDoH(lookUpAddress, dnsProvider);
 
     InternetAddress clientAddress = InternetAddress.anyIPv4;
-    if (addressArray.first.type == InternetAddressType.IPv6) {
+    if (ntpServerAddress.type == InternetAddressType.IPv6) {
       clientAddress = InternetAddress.anyIPv6;
     }
 
     // Init datagram socket to anyIPv4 and to port 0
     final RawDatagramSocket _datagramSocket =
-        await RawDatagramSocket.bind(clientAddress, 0, reuseAddress: true);
+        await RawDatagramSocket.bind(clientAddress, 0);
 
-    final _NTPMessage _ntpMessage = _NTPMessage();
+    final NTPMessage _ntpMessage = NTPMessage();
     final List<int> buffer = _ntpMessage.toByteArray();
     final DateTime time = localTime ?? DateTime.now();
     _ntpMessage.encodeTimestamp(buffer, 40,
         (time.millisecondsSinceEpoch / 1000.0) + _ntpMessage.timeToUtc);
 
     // Send buffer packet to the address from [addressArray] and port [port]
-    _datagramSocket.send(buffer, addressArray.first, port);
+    _datagramSocket.send(buffer, ntpServerAddress, port);
     // Receive packet from socket
     Datagram packet;
 
@@ -37,6 +55,7 @@ class NTP {
       }
       return packet != null;
     };
+
     try {
       if (timeout != null) {
         await _datagramSocket.timeout(timeout).firstWhere(_receivePacket);
@@ -53,20 +72,32 @@ class NTP {
       return Future<int>.error('Error: Packet is empty!');
     }
 
-    final int offset = _parseData(packet.data, time);
+    final int offset = _parseData(packet.data, DateTime.now());
     return offset;
   }
 
   /// Get current NTP time
-  static Future<DateTime> now() async {
+  static Future<DateTime> now({
+    String lookUpAddress = _defaultLookup,
+    int port = 123,
+    Duration timeout,
+    DnsApiProvider dnsProvider = DnsApiProvider.google,
+  }) async {
     final DateTime localTime = DateTime.now();
-    final int offset = await getNtpOffset(localTime: localTime);
-    return DateTime.now().add(Duration(milliseconds: offset));
+    final int offset = await getNtpOffset(
+      lookUpAddress: lookUpAddress,
+      port: port,
+      localTime: localTime,
+      timeout: timeout,
+      dnsProvider: dnsProvider,
+    );
+
+    return localTime.add(Duration(milliseconds: offset));
   }
 
   /// Parse data from datagram socket.
   static int _parseData(List<int> data, DateTime time) {
-    final _NTPMessage _ntpMessage = _NTPMessage(data);
+    final NTPMessage _ntpMessage = NTPMessage(data);
     final double destinationTimestamp =
         (time.millisecondsSinceEpoch / 1000.0) + 2208988800.0;
     final double localClockOffset =
@@ -75,6 +106,42 @@ class NTP {
             2;
 
     return (localClockOffset * 1000).toInt();
+  }
+
+  /// Utility to read data from HttpClientResponse
+  static Future<String> _readResponse(HttpClientResponse response) {
+    final completer = Completer<String>();
+    final contents = StringBuffer();
+    response.transform(utf8.decoder).listen((data) {
+      contents.write(data);
+    }, onDone: () => completer.complete(contents.toString()));
+    return completer.future;
+  }
+
+  /// Utility to resolve DNS over HTTPs (DoH)
+  static Future<InternetAddress> _lookupDoH(
+      String host, DnsApiProvider provider) async {
+    final _provider = _dnsApiProviderUrl[provider];
+    final httpClient = HttpClient();
+    final query = '$_provider?name=$host&type=a&do=1';
+    final request = await httpClient.getUrl(Uri.parse(query));
+    final response = await request.close();
+    if (response.statusCode == HttpStatus.ok) {
+      // HTTP OK
+      final String jsonContent = await _readResponse(response);
+      final Map<String, dynamic> map =
+          json.decode(jsonContent) as Map<String, dynamic>;
+
+      final addresses = (map['Answer'] as List<dynamic>)
+          .map((dynamic answer) => answer['data'] as String)
+          .toList()
+          .firstWhere((element) => _ipRegex.hasMatch(element),
+              orElse: () => null);
+
+      return InternetAddress(addresses);
+    }
+
+    return null;
   }
 }
 
@@ -115,13 +182,13 @@ class NTP {
 ///
 /// @author Adam Buckley
 /// Rewritten in dart by: Luka Knezic 2018
-class _NTPMessage {
+class NTPMessage {
   /// Constructs a NtpMessage in client -> server mode, and sets the
   /// transmit timestamp to the current time.
   ///
   /// If byte array (raw NTP packet) is passed to constructor then the
   /// data is filled from a raw NTP packet.
-  _NTPMessage([List<int> array]) {
+  NTPMessage([List<int> array]) {
     if (array != null) {
       _leapIndicator = array[0] >> 6 & 0x3;
       _version = array[0] >> 3 & 0x7;
