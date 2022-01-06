@@ -4,7 +4,7 @@ version: 1.0.8
 homepage: https://github.com/knezzz/ntp
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  universal_io: ^1.0.1
+  universal_io: ^2.0.4
